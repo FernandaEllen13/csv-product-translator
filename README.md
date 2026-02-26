@@ -31,7 +31,7 @@ Project Structure
 
 The project follows a simplified MVC architecture pattern:
 
-*   model: Data representation (Produto).
+*   model: Data representation
 
 *   service: Business logic (Translation API integration).
 
