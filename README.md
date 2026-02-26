@@ -1,39 +1,38 @@
-Leitor e Tradutor de Produtos (CSV)
+CSV Product Reader and Translator
 ===================================
 
-Este é um projeto simples em **Java** desenvolvido para praticar o gerenciamento de dependências através do **Maven**. A aplicação realiza a leitura de um arquivo de dados em formato CSV, processa as informações traduzindo-as de inglês para português e exibe o resultado final no terminal.
+A simple project to practice Maven dependency management for an Alura course. This Java application reads a CSV data file, processes the information by translating it from English to Portuguese, and displays the final result in the terminal.
 
-Tecnologias e Bibliotecas
+Technologies and Libraries
 ----------------------------
 
 *   **Java 25**
 
-*   **Maven**: Gerenciamento de dependências e build.
+*   **Maven**: Dependency management and build tool.
 
-*   **OpenCSV (5.12.0)**: Utilizado para o parsing e mapeamento do arquivo products.csv para objetos Java.
+*   **OpenCSV (5.12.0)**: Used for parsing and mapping the products.csv file directly to Java objects.
+*   **LibreTranslate**: API integration to translate the product data.
 
-*   **LibreTranslate**: Integração com API de tradução para converter os dados dos produtos.
 
-
-Como funciona
+How it works
 -----------------
 
-1.  **Leitura**: O sistema busca o arquivo products.csv na pasta de recursos.
+1.  **Reading**: The system locates and reads the products.csv file from the resources folder.
 
-2.  **Mapeamento**: Utiliza anotações @CsvBindByName para converter as linhas do CSV diretamente no modelo Produto.
+2.  **Mapping**: Uses @CsvBindByName annotations to seamlessly convert CSV rows into the Produto model.
 
-3.  **Tradução**: Através do TraduzProdutoService, os campos de nome, categoria e descrição são enviados para a API do LibreTranslate.
+3.  **Translation**: Through the TraduzProdutoService, the name, category, and description fields are sent to the LibreTranslate API.
 
-4.  **Saída**: Os dados originais e traduzidos são impressos no console.
+4.  **Output**: Both the original and translated data are printed to the console.
 
 
-Estrutura do Projeto
+Project Structure
 -----------------------
 
-O projeto segue o padrão de arquitetura MVC simplificado:
+The project follows a simplified MVC architecture pattern:
 
-*   model: Representação do dado (Produto).
+*   model: Data representation (Produto).
 
-*   service: Lógica de negócio (Integração com a tradução).
+*   service: Business logic (Translation API integration).
 
-*   resources: Arquivos de configuração e dados (CSV).
+*   resources: Configuration files and data (CSV).
